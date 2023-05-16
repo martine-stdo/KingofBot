@@ -1,11 +1,11 @@
 <template>
     <ContentField>
-        对局记录
+        我的Bot
     </ContentField>
     </template>
     
     <script>
-    import ContentField from '../../components/ContentField.vue'
+    import ContentField from '../../../components/ContentField.vue'
     export default {
         components: {
             ContentField

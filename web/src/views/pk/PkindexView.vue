@@ -1,8 +1,16 @@
 <template>
-<div>pk</div>
+<ContentField>
+    对战
+</ContentField>
 </template>
 
 <script>
+import ContentField from '../../components/ContentField.vue'
+export default {
+    components: {
+        ContentField
+    }
+}
 
 </script>
 
