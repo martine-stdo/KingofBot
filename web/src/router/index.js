@@ -6,33 +6,49 @@ import UserBotindexView from '../views/users/bot/UserBotindexView.vue'
 import NotFound from '../views/error/NotFound.vue'
 import UserAccountLoginView from '../views/users/account/UserAccountLoginView.vue'
 import UserAccountRegisterView from '../views/users/account/UserAccountRegisterView.vue'
+import store from '../store'
 
 
 const routes = [
   {
     path: "/",
     name: "home",
-    redirect: "/pk/"
+    redirect: "/pk/",
+    meta: {
+      requestAuth: true
+    }
   },
   {
     path: "/pk/",
     name: "pk_index",
-    component: PkindexView
+    component: PkindexView,
+    meta: {
+      requestAuth: true
+    }
   },
   {
     path: "/record/",
     name: "record_index",
-    component: RecordindexView
+    component: RecordindexView,
+    meta: {
+      requestAuth: true
+    }
   },
   {
     path: "/ranklist/",
     name: "ranklist_index",
-    component: RanklistindexView
+    component: RanklistindexView,
+    meta: {
+      requestAuth: true
+    }
   },
   {
     path: "/user/bot/",
     name: "user_bot_index",
-    component: UserBotindexView
+    component: UserBotindexView,
+    meta: {
+      requestAuth: true
+    }
   },
   {
     path: "/:pathMatch(.*)*",
@@ -43,13 +59,19 @@ const routes = [
   {
     path: "/user/account/login/",
     name: "user_account_login",
-    component: UserAccountLoginView
+    component: UserAccountLoginView,
+    meta: {
+      requestAuth: false
+    }
   },
 
   {
     path: "/user/account/register/",
     name: "user_account_register",
-    component: UserAccountRegisterView
+    component: UserAccountRegisterView,
+    meta: {
+      requestAuth: false
+    }
   },
 
 ]
@@ -57,6 +79,17 @@ const routes = [
 const router = createRouter({
   history: createWebHistory(),
   routes
+})
+
+router.beforeEach((to, from, next) => {
+
+  if (to.meta.requestAuth && !store.state.user.is_login) {
+    next({
+      name: "user_account_login"
+    })
+  } else {
+    next();
+  }
 })
 
 export default router
