@@ -5,7 +5,7 @@
 ## 一个java的SpringBoot项目
 
 ### 5/27实现了用户的登录与注册
-![](https://raw.githubusercontent.com/martine-stdo/my_images/master/Login%2526register.gif)
+![](https://raw.githubusercontent.com/martine-stdo/my_images/master/LoginandRegister.gif)
 ### 5/26
 完成了蛇的移动，以及相关逻辑
 ![](https://raw.githubusercontent.com/martine-stdo/my_images/master/Snake.gif)
