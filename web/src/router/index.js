@@ -4,6 +4,8 @@ import RecordindexView from '../views/record/RecordindexView.vue'
 import RanklistindexView from '../views/ranklist/RanklistindexView.vue'
 import UserBotindexView from '../views/users/bot/UserBotindexView.vue'
 import NotFound from '../views/error/NotFound.vue'
+import UserAccountLoginView from '../views/users/account/UserAccountLoginView.vue'
+import UserAccountRegisterView from '../views/users/account/UserAccountRegisterView.vue'
 
 
 const routes = [
@@ -36,7 +38,20 @@ const routes = [
     path: "/:pathMatch(.*)*",
     name: "404",
     component: NotFound
-  }
+  },
+
+  {
+    path: "/user/account/login/",
+    name: "user_account_login",
+    component: UserAccountLoginView
+  },
+
+  {
+    path: "/user/account/register/",
+    name: "user_account_register",
+    component: UserAccountRegisterView
+  },
+
 ]
 
 const router = createRouter({
