@@ -1,7 +1,8 @@
 <template>
+    <div class="custom-content-field">
     <ContentField>
-        <div class="row justify-content-md-center">
-            <div class="col-3">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-6">
 
                 <form @submit.prevent="register">
                     <div class="mb-3">
@@ -23,6 +24,7 @@
             </div>
         </div>
     </ContentField>
+</div>
     </template>
     
     <script>
@@ -81,4 +83,31 @@
 div.error_message {
     color: red;
 }
-    </style>
+
+.custom-content-field {
+    /* 示例：调整外部容器位置和宽度 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+    width: 35vw;
+    margin-left: 30%;
+}
+
+.custom-content-field .row {
+    /* 示例：调整内部行的样式 */
+    margin-top: 20px;
+}
+
+.custom-content-field .col-12 {
+    /* 示例：调整内部列的样式 */
+    max-width: 600px;
+    height: 350px;
+    margin: 0 auto; /* 居中对齐 */
+    padding: 0 15px; /* 左右内边距 */
+    box-sizing: border-box; /* 确保内边距不影响宽度 */
+}
+button {
+    margin-top: 50px; /* 调整上边距的值来移动按钮的位置 */
+}
+</style>
